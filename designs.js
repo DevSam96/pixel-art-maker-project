@@ -1,6 +1,7 @@
 // variable to count the grid
 let funcCalled = 0;
-
+// variable to reference the table
+const table = document.getElementById("pixelCanvas");
 // Select color input
 let color = document.querySelector("#colorPicker");
 color.addEventListener("change", function(event) {
@@ -20,7 +21,6 @@ width.addEventListener("input", function(event) {
 // create a grid with chosen height and width
 function makeGrid() {
 funcCalled += 1;
-let table = document.querySelector("#pixelCanvas")
 for(let height1 = height.value; height1> 0; --height1) {
     let row = document.createElement("tr")
     table.appendChild(row);
@@ -33,7 +33,6 @@ for(let height1 = height.value; height1> 0; --height1) {
 
 // remove the grid
 function removeGrid() {
-  let table = document.getElementById("pixelCanvas");
   while (table.firstChild) {
     table.removeChild(table.firstChild);}
 }
