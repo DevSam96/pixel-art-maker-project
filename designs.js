@@ -1,18 +1,18 @@
 // variable to count the grid
-var funcCalled = 0;
+let funcCalled = 0;
 
 // Select color input
-var color = document.querySelector("#colorPicker");
+let color = document.querySelector("#colorPicker");
 color.addEventListener("change", function(event) {
   color.setAttribute('value',event.target.value);
 });
 
 // Select size input
-var height = document.querySelector("#inputHeight");
+let height = document.querySelector("#inputHeight");
  height.addEventListener("input", function(event) {
   height.setAttribute('value',event.target.value);
 });
-var width = document.querySelector("#inputWidth");
+let width = document.querySelector("#inputWidth");
 width.addEventListener("input", function(event) {
   width.setAttribute('value',event.target.value);
 });
@@ -20,12 +20,12 @@ width.addEventListener("input", function(event) {
 // create a grid with chosen height and width
 function makeGrid() {
 funcCalled += 1;
-var table = document.querySelector("#pixelCanvas")
-for(var height1 = height.value; height1> 0; --height1) {
-    var row = document.createElement("tr")
+let table = document.querySelector("#pixelCanvas")
+for(let height1 = height.value; height1> 0; --height1) {
+    let row = document.createElement("tr")
     table.appendChild(row);
-    for (var width1 = width.value; width1 > 0; --width1) {
-        var column = document.createElement("td")
+    for (let width1 = width.value; width1 > 0; --width1) {
+        let column = document.createElement("td")
         row.appendChild(column);
       }
     };
@@ -33,7 +33,7 @@ for(var height1 = height.value; height1> 0; --height1) {
 
 // remove the grid
 function removeGrid() {
-  var table = document.getElementById("pixelCanvas");
+  let table = document.getElementById("pixelCanvas");
   while (table.firstChild) {
     table.removeChild(table.firstChild);}
 }
@@ -41,7 +41,7 @@ function removeGrid() {
 // set/unset background color to the squares
 function colorCell() {
 if (funcCalled > 0) {
-    var cell = document.querySelectorAll("td");
+    let cell = document.querySelectorAll("td");
     cell.forEach(function(el){el.addEventListener("click", function() {
       el.style.backgroundColor == false ?  el.style.backgroundColor = color.value : el.setAttribute("style","")
     })});
