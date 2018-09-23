@@ -68,11 +68,14 @@ if (funcCalled > 0) {
 };
 
 /**
-* @description When size is submitted by the user, call makeGrid()
+* @description prevent the submit button to refresh the page
 */
 document.querySelector("#sizePicker").addEventListener("submit", function(event){
     event.preventDefault();
 });
+/**
+* @description call makeGrid() and colorCell() and reset the grid if already exists
+*/
 document.querySelector("#sizePicker").addEventListener("submit", function(){
         if (funcCalled === 0) {
         makeGrid();
