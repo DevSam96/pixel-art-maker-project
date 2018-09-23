@@ -1,0 +1,48 @@
+body {
+    text-align: center;
+}
+/* for h1 rainbow background
+ https://stackoverflow.com/questions/40557461/rainbow-gradient-on-text-in-css/40557564
+*/
+h1 {
+    font-family: Monoton;
+    font-size: 70px;
+    margin: 0.2em;
+    background: -webkit-linear-gradient(left, red, orange , yellow, cyan, blue, violet);
+    background: -o-linear-gradient(right, red, orange , yellow, cyan, blue, violet);
+    background: -moz-linear-gradient(right, red, orange , yellow, cyan, blue, violet);
+    background: linear-gradient(to right, red, orange , yellow, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    margin: 1em 0 0.25em;
+}
+
+h2:first-of-type {
+    margin-top: 0.5em;
+}
+
+table,
+tr,
+td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+tr {
+    height: 20px;
+}
+
+td {
+    width: 20px;
+}
+
+input[type=number] {
+    width: 6em;
+}
